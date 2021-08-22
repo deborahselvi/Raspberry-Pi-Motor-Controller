@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+   <head>
+      <title>Motor Controller</title>
+      <link rel="stylesheet" href="{{url_for('static', filename='stylesheets/style.css')}}"/>
+   </head>
+   <body>
+		<h1>RPi Motor Controller</h1> 
+		<br> 
+		<h2> Actuator Status & Control </h2> 
+		<h3> Motor Input 1 ==>  {{ motorIn1 }}  </h3>
+		<h3> Motor Input 2 ==>  {{ motorIn2 }}  </h3>
+		<h3> Motor Input 3 ==>  {{ motorIn3 }}  </h3>
+		<h3> Motor Input 4 ==>  {{ motorIn4 }}  </h3>
+		<a href="/straight"class="button">STRAIGHT</a> 
+		<a href="/reverse"class="button">REVERSE</a> 
+		<a href="/left"class="button">LEFT</a> 
+		<a href="/right"class="button">RIGHT</a> 
+		<a href="/stop"class="button">STOP</a> 
+   </body>
+</html>
+
