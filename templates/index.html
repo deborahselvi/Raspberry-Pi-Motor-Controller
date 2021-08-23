@@ -4,18 +4,30 @@
       <link rel="stylesheet" href="{{url_for('static', filename='stylesheets/style.css')}}"/>
    </head>
    <body>
-		<h1>RPi Motor Controller</h1> 
+		<h1 class="align-center">RaspberryPi Motor Controller</h1> 
 		<br> 
-		<h2> Actuator Status & Control </h2> 
-		<h3> Motor Input 1 ==>  {{ motorIn1 }}  </h3>
-		<h3> Motor Input 2 ==>  {{ motorIn2 }}  </h3>
-		<h3> Motor Input 3 ==>  {{ motorIn3 }}  </h3>
-		<h3> Motor Input 4 ==>  {{ motorIn4 }}  </h3>
-		<a href="/straight"class="button">STRAIGHT</a> 
-		<a href="/reverse"class="button">REVERSE</a> 
-		<a href="/left"class="button">LEFT</a> 
-		<a href="/right"class="button">RIGHT</a> 
-		<a href="/stop"class="button">STOP</a> 
+		<h2 class="align-center"> Motor Input Status & Control </h2> 
+		<div class="row">
+			<div class="width-50 py-10 pr-1 pl-10">
+				<h3> Motor Input 1 --  {{ motorIn1 }}  </h3>
+				<h3> Motor Input 2 --  {{ motorIn2 }}  </h3>
+				<h3> Motor Input 3 --  {{ motorIn3 }}  </h3>
+				<h3> Motor Input 4 --  {{ motorIn4 }}  </h3>
+			</div>
+			<div class="width-50 right-container py-10 pr-10 pl-1">
+				<div>
+					<a href="/straight"class="button">STRAIGHT</a> 
+				</div>
+				<div class="d-flex">
+					<a href="/left"class="button">LEFT</a> 
+					<a href="/stop"class="button">STOP</a> 
+					<a href="/right"class="button">RIGHT</a> 
+				</div>
+				<div>
+					<a href="/reverse"class="button">REVERSE</a>
+				</div>
+			</div>
+		</div>
    </body>
 </html>
 
