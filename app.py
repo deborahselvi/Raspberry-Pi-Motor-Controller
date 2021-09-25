@@ -6,10 +6,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-#define sensors GPIOs
-button = 20
-senPIR = 16
-#define actuators GPIOs
+# Define actuators GPIOs
 motorIn1 = 18
 motorIn2 = 23
 motorIn3 = 25
@@ -19,14 +16,13 @@ motorIn1Sts = 0
 motorIn2Sts = 0
 motorIn3Sts = 0
 motorIn4Sts = 0
-# Define button and PIR sensor pins as an input
 
-# Define led pins as output
+# Define motor controller pins as output
 GPIO.setup(motorIn1, GPIO.OUT)   
 GPIO.setup(motorIn2, GPIO.OUT) 
 GPIO.setup(motorIn3, GPIO.OUT)
 GPIO.setup(motorIn4, GPIO.OUT) 
-# turn leds OFF 
+# turn motor controller pins OFF 
 GPIO.output(motorIn1, GPIO.LOW)
 GPIO.output(motorIn2, GPIO.LOW)
 GPIO.output(motorIn3, GPIO.LOW)
@@ -46,7 +42,7 @@ def index():
       		'motorIn4'  : motorIn4Sts,
       	}
 	return render_template('index.html', **templateData)
-	
+
 @app.route("/<action>")
 def action(action):
    
@@ -88,5 +84,6 @@ def action(action):
       		'motorIn4'  : motorIn4Sts,
 	}
 	return render_template('index.html', **templateData)
+
 if __name__ == "__main__":
    app.run(host='0.0.0.0', port=8080, debug=True)
